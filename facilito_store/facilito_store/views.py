@@ -10,17 +10,17 @@ from django.contrib.auth.models import User # con esta clase podemos dar de alta
 
 from .forms import RegisterForm
 
+from products.models import Product
+
 def index(request):
+
+    products = Product.objects.all().order_by('-id')
+
     return render(request, 'index.html', {
         # context: con este diccionario podemos pasarle valores a nuestro template
         'message': 'Listado de productos',
         'title': 'Productos',
-        'products': [
-            {'title': 'Polo', 'price': '$5', 'stock': True}, # producto
-            {'title': 'Camisa', 'price': '$7', 'stock': True},
-            {'title': 'Mochila', 'price': '$20', 'stock': False},
-            {'title': 'Laptop', 'price': '$500', 'stock': True}
-        ]
+        'products': products,
     })
 
 def login_view(request):

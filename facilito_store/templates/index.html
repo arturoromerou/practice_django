@@ -10,17 +10,13 @@
                 <li class="list-group-item">
                     {{ product.title }}
                         <span>
-                            {% if product.stock %}
-                                <span class="text-success">Disponible</span>
-                            {% else %}
-                                <span class="text-danger">No Disponible</span>
-                            {% endif %}
+                                <span class="text-success">${{ product.price }}</span>
                         </span>
                 </li>
             {% endfor %}
         </ul>
         
-    <img src="{% static 'images/580b585b2edbce24c47b2747.png' %}" alt="imagen de mochila">
+    <!-- <img src="{% static 'images/580b585b2edbce24c47b2747.png' %}" alt="imagen de mochila"> -->
     
 </div>
 {% endblock  %}

@@ -1,22 +1,18 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
 <div class="col">
-    <h1>{{ message }}</h1>
+    <h4 class="text-center">{{ message }}</h4>
     {# Este es un comentario de Django #}
-        <ul class="list-group">
-            {% for product in products %}
-                <li class="list-group-item">
-                    {{ product.title }}
-                        <span>
-                                <span class="text-success">${{ product.price }}</span>
-                        </span>
-                </li>
-            {% endfor %}
-        </ul>
-        
-    <!-- <img src="{% static 'images/580b585b2edbce24c47b2747.png' %}" alt="imagen de mochila"> -->
+    {% include 'products/snippets/search.html' %}
+
+    <div class="row">
+        {% for object in product_list %}
+            <div class="col-3 mt-5">
+                {% include 'products/snippets/product.html' with product=object %}
+            </div>
+        {% endfor %}
+    </div>
     
 </div>
 {% endblock  %}

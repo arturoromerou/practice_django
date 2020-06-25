@@ -21,3 +21,18 @@ class ProductDetailView(DetailView): # se busca por default mediante el id
     model = Product
     template_name = 'products/product.html'
 
+class ProductSearchListView(ListView):
+    template_name = 'products/search.html'
+
+    def get_queryset(self):
+        return Product.objects.filter(title=self.query())
+
+    def query(self):
+        self.request.GET.get('q')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['query'] = self.query()
+
+        return context
+

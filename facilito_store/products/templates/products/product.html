@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="media">
+    
+        <img class="align-self-center mr-3" src="{{ product.image.url }}" alt="imagen del producto" height="150">
+    
+    <div class="media-body">
+        
+        <h2 class="mt-0">{{ product.title }}</h2>
+
+        <hr>
+    
+        <div class="h5 font-weigth-bold">
+            Precio: <span class="text-danger">${{ product.price }}</span>
+        </div>
+
+        <p>{{ product.description }}</p>
+
+    </div>
+</div>
+
+{% endblock %}

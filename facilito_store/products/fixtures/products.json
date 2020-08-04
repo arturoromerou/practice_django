@@ -1,0 +1,26 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "Polo para Hombre",
+        "description": "Este en un polo para hombre que viene con distintos colores, tambien vienen en distintas tallas y estan especialmente diseniadas para caballeros.",
+        "price": "15.00",
+        "slug": "polo-para-hombre",
+        "image": "products/580b57fbd9996e24bc43bf54.png",
+        "created_ad": "2020-06-24T22:57:10.250Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Polo para Dama",
+        "description": "Este en un polo para dama que viene con distintos disenios y colores, viene en distintas tallas y estan especialmente diseniado para mujeres.",
+        "price": "20.00",
+        "slug": "polo-para-dama",
+        "image": "products/Female_T_shirt_PNG_Clip_Art-2211.png",
+        "created_ad": "2020-06-27T14:48:59.768Z"
+    }
+}
+]
